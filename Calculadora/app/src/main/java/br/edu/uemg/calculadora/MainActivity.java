@@ -157,17 +157,21 @@ public class MainActivity extends AppCompatActivity {
         exibirResultado();
     }
 
-    private void calcular(){
-        double value;
-        switch (operador){
-            case "soma": total = (Result[0] + Result[1]); break;
-            case "sub":  total = (Result[0] - Result[1]); break;
-        }
-        if(total < INVALID){
-            Result[0] = total;
-            Result[1] = 0;
-            i = 1;
-        }
+    private void calcular(){ 
+        double value; 
+        switch (operador){ 
+            case "soma": calcularSoma(); break; 
+            case "sub":  total = (Result[0] - Result[1]); break; 
+        } 
+        if(total < INVALID){ 
+            Result[0] = total; 
+            Result[1] = 0; 
+            i = 1; 
+        } 
+    }
+
+    private void calcularSoma(){
+        total = Result[0] + Result[1];
     }
 
 
