@@ -161,7 +161,7 @@ public class MainActivity extends AppCompatActivity {
         double value; 
         switch (operador){ 
             case "soma": calcularSoma(); break; 
-            case "sub":  total = (Result[0] - Result[1]); break; 
+            case "sub":  calcularSubtracao(); break;
         } 
         if(total < INVALID){ 
             Result[0] = total; 
@@ -173,13 +173,9 @@ public class MainActivity extends AppCompatActivity {
     private void calcularSoma(){
         total = Result[0] + Result[1];
     }
+    private void calcularSubtracao(){
+        total = Result[0] - Result[1];
+    }
 
-
-
-
-
-
-
-
-
+    
 }
