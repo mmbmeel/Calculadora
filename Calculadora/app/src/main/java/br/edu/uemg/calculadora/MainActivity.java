@@ -104,6 +104,13 @@ public class MainActivity extends AppCompatActivity {
                 proximoNumero();
             }
         });
+        btnMult.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                operador = "mult";
+                proximoNumero();
+            }
+        });
 
         btnIgual.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -162,6 +169,7 @@ public class MainActivity extends AppCompatActivity {
         switch (operador){ 
             case "soma": calcularSoma(); break; 
             case "sub":  calcularSubtracao(); break;
+            case "mult": calcularMultiplicacao(); break;
         } 
         if(total < INVALID){ 
             Result[0] = total; 
@@ -176,6 +184,8 @@ public class MainActivity extends AppCompatActivity {
     private void calcularSubtracao(){
         total = Result[0] - Result[1];
     }
+    private void calcularMultiplicacao(){
+        total = Result[0] * Result[1];
+    }
 
-    
 }
