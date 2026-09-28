@@ -111,7 +111,13 @@ public class MainActivity extends AppCompatActivity {
                 proximoNumero();
             }
         });
-
+        btnDiv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                operador = "div";
+                proximoNumero();
+            }
+        });
         btnIgual.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -170,6 +176,7 @@ public class MainActivity extends AppCompatActivity {
             case "soma": calcularSoma(); break; 
             case "sub":  calcularSubtracao(); break;
             case "mult": calcularMultiplicacao(); break;
+            case "div": calcularDivisao(); break;
         } 
         if(total < INVALID){ 
             Result[0] = total; 
@@ -186,6 +193,13 @@ public class MainActivity extends AppCompatActivity {
     }
     private void calcularMultiplicacao(){
         total = Result[0] * Result[1];
+    }
+    private void calcularDivisao(){
+        if(Result[1] != 0){
+            total = Result[0] / Result[1];
+        }else{
+            total = INVALID + 1;
+        }
     }
 
 }
